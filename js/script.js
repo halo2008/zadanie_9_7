@@ -101,22 +101,24 @@ function checkRoundWinner(playerPick, computerPick) {
         computer.score++;
     }
   setGamePoints();
+  checkGameEnd();
   
 }
 
 function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
-    
-	if (player.score === 10) {
-    	console.log('wygral');
-    	alert("Wygrał ", + player.name);
-    	gameState = 'ended';
-    	setGameElements();
-	} 
-	else if (computer.score === 10) {
-    	alert("Wygrał Komputer");
-    	gameState = 'ended';
-    	setGameElements();
-	}
+}
+
+function checkGameEnd() {
+  if (player.score == 10) {
+     console.log('wygral');
+     alert("Wygrał ", + player.name);
+     gameState = 'ended';
+     setGameElements();
+   } else if (computer.score == 10) {
+      alert("Wygrał Komputer");
+       gameState = 'ended';
+      setGameElements();
+  }
 }
