@@ -111,12 +111,12 @@ function setGamePoints() {
 }
 
 function checkGameEnd() {
-  if (player.score == 10) {
+  if (player.score === 10) {
      console.log('wygral');
-     alert("Wygrał ", + player.name);
+     alert("Wygrał " + player.name);
      gameState = 'ended';
      setGameElements();
-   } else if (computer.score == 10) {
+   } else if (computer.score === 10) {
       alert("Wygrał Komputer");
        gameState = 'ended';
       setGameElements();
